@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    container_name: ipmtc_db
+    environment:
+      MYSQL_DATABASE: 'ipmtc'
+      MYSQL_USER: 'ipmtc'
+      MYSQL_PASSWORD: '4268@fJfe#f4e'
+      MYSQL_ROOT_PASSWORD: '4268@fJfe#f4e'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
